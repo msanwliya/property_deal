@@ -1,0 +1,24 @@
+<h1>Edit Requirement</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@requirement) do |f| %>
+
+      <%= f.label 'Location' %>
+      <%= f.text_field :location, class: 'form-control' %>
+
+      
+      <%= f.label 'Property Type' %> <br>
+      <%= collection_select(:requirement, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => false })%>
+      
+      <br>
+      <%= f.label 'Price Range' %><br>
+      <%= f.label 'Max Range' %>
+      <%= f.text_field :max, class: 'form-control' %>
+
+      <%= f.label 'Min Range' %>
+      <%= f.text_field :min, class: 'form-control' %>
+
+      <%= f.submit 'Edit Requirement', class: 'form-control btn btn-primary', id: 'lsignup' %>
+    <% end%>
+  </div>
+</div>

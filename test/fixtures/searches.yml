@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyText
+  max_price: one
+  min_price: one
+  property_type: one
+
+two:
+  location: MyText
+  max_price: two
+  min_price: two
+  property_type: two

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyText
+  max: 1
+  min: 1
+  property_type: one
+  user: one
+
+two:
+  location: MyText
+  max: 1
+  min: 1
+  property_type: two
+  user: two

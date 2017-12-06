@@ -1,0 +1,40 @@
+<h1>Add Task</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@property) do |f| %>
+      <%= f.label 'No of members' %>
+      <%= f.text_field :member, class: 'form-control' %>
+
+      <%= f.label 'Location' %>
+      <%= f.text_field :location, class: 'form-control' %>
+
+      <%= f.label :security_deposit %>
+      <%= f.text_field :security_deposit, class: 'form-control' %>
+      
+      <%= f.label 'Property Type' %> <br>
+      <%= collection_select(:property, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => 'Select Property Type' } )%>
+      
+      <br />
+      <br />
+      <%= f.label :price %>
+      <%= f.text_field :price, class: 'form-control' %>
+
+      <div id="tasks">
+        <%= f.fields_for :address do |address| %>
+
+          <div class="field">
+            <%= address.label :street %><br>
+            <%= address.text_field :street ,class: 'form-control' %>
+            <%= address.label :city %><br>
+            <%= address.text_field :city,class: 'form-control'  %>
+            <%= address.label :state %><br>
+            <%= address.text_field :state,class: 'form-control'  %>
+
+          </div>
+        <% end %>
+      </div>
+      <%= f.submit 'Add Property', class: 'form-control btn btn-primary', id: 'lsignup' %>
+      
+    <% end%>
+  </div>
+</div>

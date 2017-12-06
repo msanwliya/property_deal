@@ -1,0 +1,11 @@
+<%= form_for (@search) do |f| %>
+  
+    <%= f.text_field :location ,placeholder: 'Type Location' %>
+  
+    <%= collection_select(:search, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => 'Select Property Type..' })%>
+  
+    <%= collection_select(:search, :max_price_id, MaxPrice.all, :id, :max, { :prompt => 'Select Max Price..' })%>
+   
+    <%= collection_select(:search, :min_price_id, MinPrice.all, :id, :min, { :prompt => 'Select Min Price..' })%>
+  <%= f.submit "Search" %>
+<% end %>

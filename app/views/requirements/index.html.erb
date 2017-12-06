@@ -1,0 +1,32 @@
+<h1>All Property</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">  
+    <div class="table-responsive">
+     <table  class="table">  
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Max price</th>
+            <th>Min price</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @requirements.each do |property| %>
+          <% if property.user == current_user %>
+            <tr>
+              <td> <%= property.location %></td>
+              <td> <%= property.max %></td>
+              <td> <%= property.min %></td>
+              <td><%= link_to 'Show',requirement_path(property) %>
+              </td>
+              <td><%= link_to 'Edit',edit_requirement_path(property) %></td>
+              <td><%= link_to 'Delete',requirement_path(property),  method: :delete,
+              data: { confirm: 'Are you sure?' }%></td>
+            </tr>
+          <% end%>
+        <% end%> 
+        </tbody> 
+      </table>
+    </div>
+  </div>
+</div>

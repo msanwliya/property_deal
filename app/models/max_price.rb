@@ -1,0 +1,2 @@
+class MaxPrice < ApplicationRecord
+end

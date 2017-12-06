@@ -1,0 +1,2 @@
+class MinPricesController < ApplicationController
+end

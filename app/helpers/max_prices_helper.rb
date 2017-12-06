@@ -1,0 +1,2 @@
+module MaxPricesHelper
+end
