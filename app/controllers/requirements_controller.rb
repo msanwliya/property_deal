@@ -12,7 +12,7 @@ class RequirementsController < ApplicationController
     if current_user.renter?
       @requirement = current_user.requirements.build(requirement_params)
       if @requirement.save
-        redirect_to @requirement
+        redirect_to requirements_path
       else
         render 'new'
       end
@@ -21,7 +21,8 @@ class RequirementsController < ApplicationController
 
 
   def show
-    @requirement = Requirement.find(params[:id])
+    requirement = Requirement.find(params[:id])
+    @properties = requirement.require_property
   end
 
   def edit
@@ -37,6 +38,10 @@ class RequirementsController < ApplicationController
     end
   end
 
+  def suggestion
+    requirement = Requirement.find(params[:id])
+    @properties = requirement.require_property
+  end
 
   private
 

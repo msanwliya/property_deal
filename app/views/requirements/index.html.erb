@@ -1,26 +1,29 @@
-<h1>All Property</h1>
+<h1>All requirement</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">  
     <div class="table-responsive">
-     <table  class="table">  
+      <table  class="table">  
         <thead>
           <tr>
             <th>Location</th>
+            <th>Property Type</th>
             <th>Max price</th>
             <th>Min price</th>
           </tr>
         </thead>
         <tbody>
-        <% @requirements.each do |property| %>
-          <% if property.user == current_user %>
+        <% @requirements.each do |requirement| %>
+          <% if requirement.user == current_user %>
             <tr>
-              <td> <%= property.location %></td>
-              <td> <%= property.max %></td>
-              <td> <%= property.min %></td>
-              <td><%= link_to 'Show',requirement_path(property) %>
+              <td> <%= requirement.location %></td>
+              <td> <%= property_type_name(requirement.property_type) %></td>
+              <td> <%= requirement.max %></td>
+              <td> <%= requirement.min %></td>
+
+              <td><%= link_to 'Show',requirement_path(requirement) %>
               </td>
-              <td><%= link_to 'Edit',edit_requirement_path(property) %></td>
-              <td><%= link_to 'Delete',requirement_path(property),  method: :delete,
+              <td><%= link_to 'Edit',edit_requirement_path(requirement) %></td>
+              <td><%= link_to 'Delete',requirement_path(requirement),  method: :delete,
               data: { confirm: 'Are you sure?' }%></td>
             </tr>
           <% end%>

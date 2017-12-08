@@ -5,7 +5,6 @@
 
       <%= f.label 'Location' %>
       <%= f.text_field :location, class: 'form-control' %>
-
       
       <%= f.label 'Property Type' %> <br>
       <%= collection_select(:requirement, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => false })%>

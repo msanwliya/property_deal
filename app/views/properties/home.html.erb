@@ -25,10 +25,14 @@
               <td><%= link_to 'Delete',property_path(property),  method: :delete,
               data: { confirm: 'Are you sure?' }%></td>
             </tr>
+
           <% end%>
         <% end%> 
         </tbody> 
       </table>
+       <div class="col">
+    <%= tag.div nil, id: 'map', data: { addresses: @addresses.to_json(methods: [:street]) } %>
+  </div>
     </div>
   </div>
 </div>

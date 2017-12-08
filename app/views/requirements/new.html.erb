@@ -4,9 +4,8 @@
     <%= form_for(@requirement) do |f| %>
 
       <%= f.label 'Location' %>
-      <%= f.text_field :location, class: 'form-control' %>
+      <%= f.text_field :location,id: 'geo-input', class: 'form-control' %>
 
-      
       <%= f.label 'Property Type' %> <br>
       <%= collection_select(:requirement, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => 'Select Property Type..' })%>
       

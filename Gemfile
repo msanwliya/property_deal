@@ -9,7 +9,11 @@ gem 'devise'
 gem 'bootstrap_form'
 
 gem "cocoon"
-
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails'
+gem 'geocomplete_rails'
+gem 'jquery-rails'
+gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

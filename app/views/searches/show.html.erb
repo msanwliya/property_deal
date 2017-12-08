@@ -1,8 +1,10 @@
-<% @search.seach_property.each do |s| %>
 
-  <%= s.location %>
-  <%= s.member %>
-  <%= s.price %>
-  <%= s.security_deposit %>
+<% @properties.each do |s| %>
+
+  Location:- <%= s.location %><br>
+  Property Type:- <%= property_type_name(s.property_type)%><br>
+  Member:- <%= s.member %><br>
+  Price:- <%= s.price %><br>
+  Security Deposit:- <%= s.security_deposit %><br>
   
 <% end %>

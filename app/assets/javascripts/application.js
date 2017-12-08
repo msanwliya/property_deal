@@ -11,6 +11,51 @@
 // about supported directives.
 //
 //= require cocoon
+//= require jquery
+//= require('./maps')
+//= require jquery_ujs
+//= require geocomplete
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+$(function() {
+ $("#geo-input").geocomplete();
+ $("#street").geocomplete({map: "#mapnew"});
+ $("#city").geocomplete();
+ $("#state").geocomplete();
+});  
+
+document.addEventListener("turbolinks:load", function() {
+
+  var map = new GMaps({
+    div: '#map',
+    lat: 38.5816,
+    lng: -121.4944
+  });
+  window.map = map;
+
+  var addresses = JSON.parse(document.querySelector("#map").dataset.transactions);
+  window.addresses = addresses;
+
+  var bounds = new google.maps.LatLngBounds();
+
+  addresses.forEach(function(address) {
+    if (address.latitude && address.longitude) {
+      var marker = map.addMarker({
+        lat: address.latitude,
+        lng: address.longitude,
+        title: address.street,
+        infoWindow: {
+          content: `<p><a href='/addresses/${address.id}'>${address.street}</a></p>`
+        }
+      });
+
+      bounds.extend(marker.position);
+    }
+  });
+
+  map.fitBounds(bounds);
+});
+
+
+

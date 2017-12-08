@@ -5,14 +5,17 @@ class SearchesController < ApplicationController
   end
 
   def create 
-    @search = Search.create(search_params)
+   
+    @search = Search.new(search_params)
     if @search.save
+
       redirect_to @search
     end
   end
 
   def show
-    @search = Search.find(params[:id])
+    search = Search.find(params[:id])
+    @properties = search.search_property
   end
 
   private

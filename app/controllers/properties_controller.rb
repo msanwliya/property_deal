@@ -2,6 +2,7 @@ class PropertiesController < ApplicationController
 
   def home    
     @properties = Property.all   
+    @addresses = Address.all
   end
 
   def index
@@ -51,7 +52,7 @@ class PropertiesController < ApplicationController
   private
   def property_params
 
-    params.require(:property).permit(:member,:location,:security_deposit,:property_type_id,:price,address_attributes: [:id,:street, :city , :state,:property_id]) 
+    params.require(:property).permit(:member,:security_deposit,:property_type_id,:price,address_attributes: [:id,:street,:property_id]) 
   end
   
 end

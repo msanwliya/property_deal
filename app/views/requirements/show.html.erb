@@ -5,10 +5,15 @@
       <div class="panel-heading">requirement Details</div>
       <div class="panel-body">
         <ul>
-        <li> <%= @requirement.location %></li>
-        <li> <%= property_type_name(@requirement.property_type)%></li>
-        <li> <%= @requirement.max %></li>
-        <li> <%= @requirement.min%></li>
+          <% @properties.each do |s| %>
+
+            Location:- <%= s.location %><br>
+            Property Type:- <%= property_type_name(s.property_type) %><br>
+            Member:- <%= s.member %><br>
+            Price:- <%= s.price %><br>
+            Security Deposit:- <%= s.security_deposit %><br>
+  
+          <% end %>
         </ul>
       </div>
     </div>

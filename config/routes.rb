@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources  :property_types
   resources  :addresses
   resources  :searches
+  resources  :users
   root 'properties#index'
   get '/home', to: 'properties#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

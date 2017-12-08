@@ -3,41 +3,4 @@
  <%= render :partial => "layouts/search" %>
 <% end %>
 
-<h1>All property</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-  
-
-    <div class="table-responsive">
-     <table  class="table">  
-        <thead>
-          <tr>
-            <th>Location</th>
-            <th>No of member</th>
-            <th>Price</th>
-            <th>Security Deposit</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @properties.each do |property| %>
-         
-            <tr>
-              <td> <%= property.location %></td>
-              <td> <%= property.member %></td>
-              <td> <%= property.price %></td>
-              <td> <%= property.security_deposit %></td>
-              <td><%= link_to 'Show',property_path(property) %>
-              </td>
-            </tr>
-          
-        <% end%> 
-        </tbody> 
-      </table>
-    </div>
-    </div>
-    </div>
-    </div>
 
