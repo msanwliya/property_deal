@@ -15,7 +15,7 @@
         <% @properties.each do |property| %>
           <% if property.user == current_user %>
             <tr>
-              <td> <%= property.location %></td>
+              <td> <%= property.address.street %></td>
               <td> <%= property.member %></td>
               <td> <%= property.price %></td>
               <td> <%= property.security_deposit %></td>
@@ -30,9 +30,6 @@
         <% end%> 
         </tbody> 
       </table>
-       <div class="col">
-    <%= tag.div nil, id: 'map', data: { addresses: @addresses.to_json(methods: [:street]) } %>
-  </div>
     </div>
   </div>
 </div>

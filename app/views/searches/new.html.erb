@@ -1,11 +1,11 @@
 <%= form_for (@search) do |f| %>
   
-    <%= f.text_field :location ,placeholder: 'Type Location',id: 'geo-input' %>
-  
-    <%= collection_select(:search, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => 'Select Property Type..' },{:include_blank => true})%>
-  
-    <%= collection_select(:search, :max_price_id, MaxPrice.all, :id, :max, { :prompt => 'Select Max Price..' },{:include_blank => true})%>
-   
-    <%= collection_select(:search, :min_price_id, MinPrice.all, :id, :min, { :prompt => 'Select Min Price..' },{:include_blank => true})%>
+  <%= f.text_field :location ,placeholder: 'Type Location',id: 'geo-input' %>
+
+  <%= collection_select(:search, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => 'Select Property Type..' },{:include_blank => true})%>
+
+  <%= collection_select(:search, :max_price_id, MaxPrice.all, :id, :max, { :prompt => 'Select Max Price..' },{:include_blank => true})%>
+
+  <%= collection_select(:search, :min_price_id, MinPrice.all, :id, :min, { :prompt => 'Select Min Price..' },{:include_blank => true})%>
   <%= f.submit "Search" %>
 <% end %>

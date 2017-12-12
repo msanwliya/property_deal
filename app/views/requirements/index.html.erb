@@ -12,22 +12,22 @@
           </tr>
         </thead>
         <tbody>
-        <% @requirements.each do |requirement| %>
-          <% if requirement.user == current_user %>
-            <tr>
-              <td> <%= requirement.location %></td>
-              <td> <%= property_type_name(requirement.property_type) %></td>
-              <td> <%= requirement.max %></td>
-              <td> <%= requirement.min %></td>
+          <% @requirements.each do |requirement| %>
+            <% if requirement.user == current_user %>
+              <tr>
+                <td> <%= requirement.location %></td>
+                <td> <%= property_type_name(requirement.property_type) %></td>
+                <td> <%= requirement.max %></td>
+                <td> <%= requirement.min %></td>
 
-              <td><%= link_to 'Show',requirement_path(requirement) %>
-              </td>
-              <td><%= link_to 'Edit',edit_requirement_path(requirement) %></td>
-              <td><%= link_to 'Delete',requirement_path(requirement),  method: :delete,
-              data: { confirm: 'Are you sure?' }%></td>
-            </tr>
-          <% end%>
-        <% end%> 
+                <td><%= link_to 'Show',requirement_path(requirement) %>
+                </td>
+                <td><%= link_to 'Edit',edit_requirement_path(requirement) %></td>
+                <td><%= link_to 'Delete',requirement_path(requirement),  method: :delete,
+                data: { confirm: 'Are you sure?' }%></td>
+              </tr>
+            <% end%>
+          <% end%> 
         </tbody> 
       </table>
     </div>

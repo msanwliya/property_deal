@@ -2,11 +2,15 @@ class PropertiesController < ApplicationController
 
   def home    
     @properties = Property.all   
-    @addresses = Address.all
   end
 
   def index
-     @properties = Property.search(params[:search])
+    
+    if params[:search].nil?
+      @properties = []
+    else
+       @properties = Property.search(params[:search])
+    end
   end
 
   def new
@@ -36,11 +40,16 @@ class PropertiesController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
-     if @property.update(property_params)
+    if @property.update(property_params)
       redirect_to @property
     else
       render 'edit'
     end
+  end
+
+  def approve
+    # Property.where(id: params[:property_id]).update_all(approved: true)
+    @properties = Property.all 
   end
 
   def destroy
@@ -51,7 +60,6 @@ class PropertiesController < ApplicationController
 
   private
   def property_params
-
     params.require(:property).permit(:member,:security_deposit,:property_type_id,:price,address_attributes: [:id,:street,:property_id]) 
   end
   

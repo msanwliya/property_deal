@@ -12,8 +12,7 @@
       <%= f.text_field :security_deposit, class: 'form-control' %>
       
       <%= f.label 'Property Type' %> <br>
-      <%= collection_select(:property, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => false })%>
-      
+      <%= collection_select(:property, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => false })%>     
       <br>
       <%= f.label :price %>
       <%= f.text_field :price, class: 'form-control' %>

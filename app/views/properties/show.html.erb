@@ -1,11 +1,10 @@
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
       <div class="panel-heading">Property Details</div>
         <div class="panel-body">
           <ul>
-            <li> <%= @property.location %></li>
+            <li> <%= @property.address.street %></li>
             <li> <%= @property.member %></li>
             <li> <%= @property.price %></li>
             <li> <%= property_type_name(@property.property_type)%></li>
