@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
-      <div class="panel-heading">requirement Details</div>
+      <div class="panel-heading">View Properties</div>
       <div class="panel-body">
         <ul>
           <% @properties.each do |s| %>
 
-            Location:- <%= s.location %><br>
+            Location:- <%= s.address.street %><br>
             Property Type:- <%= property_type_name(s.property_type) %><br>
             Member:- <%= s.member %><br>
             Price:- <%= s.price %><br>

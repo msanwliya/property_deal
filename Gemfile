@@ -5,7 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 gem 'bootstrap_form'
+gem 'bootstrap-sass', '3.2.0.2'
 gem "cocoon"
+gem 'carrierwave'
 gem 'devise'
 gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails'
 gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails'
@@ -17,7 +19,7 @@ gem 'rubocop'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
-gem 'bootstrap-sass', '3.2.0.2'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

@@ -1,0 +1,32 @@
+ <%= form_for(@property, :html => { :multipart => true }) do |f| %>
+  <%= f.label 'No of members' %>
+  <%= f.text_field :member, class: 'form-control' %>
+ 
+  <%= f.label :security_deposit %>
+  <%= f.text_field :security_deposit, class: 'form-control' %>
+  
+  <%= f.label 'Property Type' %> <br>
+  <%= collection_select(:property, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => 'Select Property Type' } )%><br>
+  
+  <%= f.label :price %>
+  <%= f.text_field :price, class: 'form-control' %>
+
+  <br>
+  <div id="tasks">
+    <div class="details">
+    <%= f.label 'Address' %>
+    <%= f.fields_for :address do |address| %>
+      <%= render 'address_fields', f: address %>
+    <% end %>
+    </div>
+  </div>
+  <%= f.label 'Upload Images' %>
+  <%= f.fields_for :property_images do |image| %>
+    <%= render 'image_fields', f: image %>
+  <% end %>
+  
+       <div class="links">
+       <%#= link_to_add_association 'add answer', f, :property_images %>
+     </div>
+       <%= f.submit 'Add Property', class: 'form-control btn btn-primary', id: 'lsignup' %> 
+<% end%>

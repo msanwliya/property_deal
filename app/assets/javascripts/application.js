@@ -12,7 +12,6 @@
 //
 //= require cocoon
 //= require jquery
-//= require('./maps')
 //= require jquery_ujs
 //= require geocomplete
 //= require rails-ujs

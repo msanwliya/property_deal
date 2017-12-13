@@ -2,40 +2,6 @@
 <h1>Create Property</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@property) do |f| %>
-      <%= f.label 'No of members' %>
-      <%= f.text_field :member, class: 'form-control' %>
-     
-      <%= f.label :security_deposit %>
-      <%= f.text_field :security_deposit, class: 'form-control' %>
-      
-      <%= f.label 'Property Type' %> <br>
-      <%= collection_select(:property, :property_type_id, PropertyType.all, :id, :property_type, { :prompt => 'Select Property Type' } )%><br>
-      
-      <%= f.label :price %>
-      <%= f.text_field :price, class: 'form-control' %>
-
-      <%#= f.label 'Location' %>
-      <%#= f.text_field :location,id: 'geo-input', class: 'form-control' %>
-      <br>
-      <div id="tasks">
-       <div class="details">
-        <%= f.label 'Address' %>
-        <%= f.fields_for :address do |address| %>
-          <div class="field" >
-  
-              <%= address.label 'Location' %><br>
-              <%= address.text_field :street ,id: 'street',class: 'form-control', placeholder: 'Enter location'%>
-              <div id="mapnew" style="width:550px;height:100px">
-               <%#=address.label :city %><br>
-              <%#= address.text_field :city,id: 'city',class: 'form-control' , placeholder: 'Enter city' %>
-              <%#= address.label :state %><br>
-              <%#= address.text_field :state,id: 'state',class: 'form-control', placeholder: 'Enter state'%>
-            </div>   
-          <% end %>
-        </div>
-      </div>
-      <%= f.submit 'Add Property', class: 'form-control btn btn-primary', id: 'lsignup' %> 
-    <% end%>
+   <%= render 'form' %>
   </div>
 </div>

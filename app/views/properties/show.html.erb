@@ -9,6 +9,13 @@
             <li> <%= @property.price %></li>
             <li> <%= property_type_name(@property.property_type)%></li>
             <li> <%= @property.security_deposit %></li>
+            <div class="image">
+            <li>
+              <% @images.each do |img| %>
+              <%= image_tag img.image_url %>
+              <% end %>
+            </li>
+            </div>
           </ul>
         </div>
       </div>

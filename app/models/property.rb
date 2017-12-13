@@ -2,7 +2,9 @@ class Property < ApplicationRecord
   belongs_to :user
   belongs_to :property_type
   has_one :address,  dependent: :destroy
+  has_many :property_images
   accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :property_images
 
   def self.search(search)
     if search

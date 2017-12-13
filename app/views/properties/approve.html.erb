@@ -1,9 +1,11 @@
-<%= form_for(approve_properties_path, method: :put) do %>
+<%= form_tag(approved_properties_path, method: :put) do %>
   <% @properties.each do |property| %>
-    <tr>
+    <tr>    
       <td class="mdl-data-table__cell--non-numeric"><%= check_box_tag "property_id[]", property.id %></td>
-      <td><%= property.price %></td>
+      <td><%= property.address.street %></td>
+      <td><%= property.price %></td><br>
     </tr>
   <% end %>
   <%= submit_tag "Mark as approved" %>
 <% end %>
+

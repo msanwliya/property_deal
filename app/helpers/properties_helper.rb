@@ -1,5 +1,6 @@
 module PropertiesHelper
-  def property_type_name(name)
-    PropertyType.find_by(id: name).property_type
+  def property_type_name(property_type_id)
+     PropertyType.find_by(id: property_type_id).property_type
+    
   end
 end

@@ -38,10 +38,10 @@ class RequirementsController < ApplicationController
     end
   end
 
-  def suggestion
-    requirement = Requirement.find(params[:id])
-    @properties = requirement.require_property
-  end
+  def destroy
+    @requirement = Requirement.find(params[:id])
+    @requirement.destroy
+  end 
 
   private
 
